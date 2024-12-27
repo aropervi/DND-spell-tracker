@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D&D Campaign Spell Slot Tracker</title>
     <style>
+        /* Base styles remain the same */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -13,7 +14,7 @@
         }
 
         .spell-tracker {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: #ffffff;
             padding: 20px;
@@ -39,16 +40,23 @@
         }
 
         th, td {
-            padding: 12px;
+            padding: 12px 8px;
             border: 1px solid #ddd;
             text-align: center;
-            min-width: 80px;
+            min-width: 90px;
         }
 
+        /* Updated header styling */
         th {
             background: #34495e;
             color: white;
             font-weight: bold;
+        }
+
+        /* Special columns now use the same dark theme */
+        th.special-col {
+            background: #2c3e50;
+            color: white;
         }
 
         .character-name {
@@ -56,18 +64,19 @@
             font-weight: bold;
             color: #2c3e50;
             background: white;
+            min-width: 200px;
         }
 
         .checkbox-group {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             cursor: pointer;
             accent-color: #3498db;
         }
@@ -76,13 +85,21 @@
             transform: scale(1.1);
         }
 
+        input[type="text"].hp-input {
+            width: 50px;
+            padding: 4px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
 
-        .no-slots {
-            color: #7f8c8d;
-            font-style: italic;
+        /* Updated special column styling */
+        td.special-col {
+            background: #edf2f7;
         }
     </style>
 </head>
@@ -94,6 +111,7 @@
                 <thead>
                     <tr>
                         <th>Character</th>
+                        <th>HP</th>
                         <th>1st</th>
                         <th>2nd</th>
                         <th>3rd</th>
@@ -103,197 +121,225 @@
                         <th>7th</th>
                         <th>8th</th>
                         <th>9th</th>
+                        <th class="special-col">FEAR</th>
+                        <th class="special-col">Kindles</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Erayra Luznias -->
                     <tr>
                         <td class="character-name">Erayra Luznias (Druida)</td>
+                        <td><input type="text" class="hp-input" title="Current HP"></td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
-                                <input type="checkbox" title="Slot 4">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
+                                <input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td class="special-col">
+                            <div class="checkbox-group">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                            </div>
+                        </td>
+                        <td class="special-col">
+                            <div class="checkbox-group">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                     </tr>
+                    
+                    <!-- Waldo Bubbles -->
                     <tr>
                         <td class="character-name">Waldo Bubbles (Mago)</td>
+                        <td><input type="text" class="hp-input" title="Current HP"></td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
-                                <input type="checkbox" title="Slot 4">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
+                                <input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td class="special-col">
+                            <div class="checkbox-group">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                            </div>
+                        </td>
+                        <td class="special-col">
+                            <div class="checkbox-group">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                     </tr>
+
+                    <!-- Rhytah Lazo -->
                     <tr>
                         <td class="character-name">Rhytah Lazo (Arcane Trickster)</td>
+                        <td><input type="text" class="hp-input" title="Current HP"></td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
+                                <input type="checkbox">
                             </div>
                         </td>
                         <td colspan="5" class="no-slots">No higher level slots</td>
+                        <td class="special-col">
+                            <div class="checkbox-group">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                            </div>
+                        </td>
+                        <td class="special-col">
+                            <div class="checkbox-group">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                            </div>
+                        </td>
                     </tr>
+
+                    <!-- Hake Silver -->
                     <tr>
                         <td class="character-name">Hake Silver (Paladin)</td>
+                        <td><input type="text" class="hp-input" title="Current HP"></td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
-                                <input type="checkbox" title="Slot 4">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
-                                <input type="checkbox" title="Slot 3">
+                                <input type="checkbox"><input type="checkbox">
+                                <input type="checkbox">
                             </div>
                         </td>
                         <td>
                             <div class="checkbox-group">
-                                <input type="checkbox" title="Slot 1">
-                                <input type="checkbox" title="Slot 2">
+                                <input type="checkbox"><input type="checkbox">
                             </div>
                         </td>
                         <td colspan="4" class="no-slots">No higher level slots</td>
+                        <td class="special-col">
+                            <div class="checkbox-group">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                            </div>
+                        </td>
+                        <td class="special-col">
+                            <div class="checkbox-group">
+                                <input type="checkbox"><input type="checkbox"><input type="checkbox">
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -302,19 +348,35 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Load saved states
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach((checkbox, index) => {
-                const savedState = localStorage.getItem(`checkbox_${index}`);
-                if (savedState === 'true') {
-                    checkbox.checked = true;
-                }
-
-                // Save state on change
-                checkbox.addEventListener('change', function() {
-                    localStorage.setItem(`checkbox_${index}`, this.checked);
+            try {
+                // Load saved states
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                const hpInputs = document.querySelectorAll('.hp-input');
+                
+                checkboxes.forEach((checkbox, index) => {
+                    const savedState = localStorage.getItem(`checkbox_${index}`);
+                    if (savedState === 'true') {
+                        checkbox.checked = true;
+                    }
+                    
+                    checkbox.addEventListener('change', function() {
+                        localStorage.setItem(`checkbox_${index}`, this.checked);
+                    });
                 });
-            });
+
+                hpInputs.forEach((input, index) => {
+                    const savedHP = localStorage.getItem(`hp_${index}`);
+                    if (savedHP) {
+                        input.value = savedHP;
+                    }
+                    
+                    input.addEventListener('change', function() {
+                        localStorage.setItem(`hp_${index}`, this.value);
+                    });
+                });
+            } catch (error) {
+                console.warn('Local storage is not available:', error);
+            }
         });
     </script>
 </body>
